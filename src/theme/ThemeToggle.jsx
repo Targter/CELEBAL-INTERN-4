@@ -92,11 +92,14 @@ export function ModeToggle() {
     <Button
       variant="secondary"
       size="icon"
-      className="group/toggle size-8 ml-11"
+      className="group/toggle size-8 ml-11 w-11 h-11"
       onClick={handleThemeToggle}
       aria-label="Toggle theme"
     >
-      <IconBrightness className="transition-transform group-hover/toggle:scale-110" />
+      <IconBrightness
+        className="transition-transform group-hover/toggle:scale-110"
+        aria-label="theme"
+      />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
