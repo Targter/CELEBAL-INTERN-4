@@ -1,6 +1,6 @@
 # React Admin Dashboard
 
-![Banner](https://via.placeholder.com/1200x400.png?text=React+Admin+Dashboard) <!-- Replace with actual banner URL -->
+![Banner](https://github.com/Targter/CELEBAL-INTERN-4/blob/d4fd897789ca9792ca085c0f4043e46d62e14a1b/public/DashBoardd.png) <!-- Replace with actual banner URL -->
 
 A modern, responsive React Admin Dashboard for efficient project and team management, featuring customizable themes, interactive charts, a custom calendar, Kanban board, and automated data handling.
 
@@ -17,14 +17,14 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
 ## Screenshots
 | Dashboard | Calendar |
 |-----------|----------|
-| ![Dashboard](https://via.placeholder.com/400x300.png?text=Dashboard) | ![Calendar](https://via.placeholder.com/400x300.png?text=Calendar) |
+| ![Dashboard](https://github.com/Targter/CELEBAL-INTERN-4/blob/d4fd897789ca9792ca085c0f4043e46d62e14a1b/public/Dashbaord-dark.png) | ![Calendar](https://github.com/Targter/CELEBAL-INTERN-4/blob/d4fd897789ca9792ca085c0f4043e46d62e14a1b/public/Calender.png) |
 | Kanban | Charts |
-| ![Kanban](https://via.placeholder.com/400x300.png?text=Kanban) | ![Charts](https://via.placeholder.com/400x300.png?text=Charts) |
+| ![Kanban](https://github.com/Targter/CELEBAL-INTERN-4/blob/d4fd897789ca9792ca085c0f4043e46d62e14a1b/public/KanBan.png) | ![Charts](https://github.com/Targter/CELEBAL-INTERN-4/blob/d4fd897789ca9792ca085c0f4043e46d62e14a1b/public/Chart.png) |
 
 *Replace placeholder URLs with actual screenshot URLs.*
 
 ## Demo
-[![Demo](https://img.shields.io/badge/Demo-Live-blue?style=for-the-badge)](https://your-demo-link.com) <!-- Replace with actual demo link -->
+[![Demo](https://img.shields.io/badge/Demo-Live-blue?style=for-the-badge)]([https://your-demo-link.com](https://adminpanel.abhaybansal.site/)) <!-- Replace with actual demo link -->
 
 ## Installation
 1. Clone the repo:
@@ -33,7 +33,7 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
    ```
 2. Navigate to the directory:
    ```bash
-   cd react-admin-dashboard
+   cd CELEBAL-INTERN-4
    ```
 3. Install dependencies:
    ```bash
@@ -41,7 +41,7 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
    ```
 4. Start the app:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Usage
@@ -64,9 +64,9 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
 5. Open a pull request.
 
 ## Connect
-- **GitHub**: [your-github-username](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
-- **Email**: your-email@example.com <!-- Replace with your email -->
-- **LinkedIn**: [Your Profile](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
+- **GitHub**: [https://github.com/Targter/](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
+- **Email**: bansalabhay00@gmail.com <!-- Replace with your email -->
+- **LinkedIn**: [https://linkedin.com/in/bansalabhay](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
 
 ## License
 MIT License. See [LICENSE](LICENSE).
