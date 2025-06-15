@@ -1,12 +1,76 @@
-# React + Vite
+# React Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Banner](https://via.placeholder.com/1200x400.png?text=React+Admin+Dashboard) <!-- Replace with actual banner URL -->
 
-Currently, two official plugins are available:
+A modern, responsive React Admin Dashboard for efficient project and team management, featuring customizable themes, interactive charts, a custom calendar, Kanban board, and automated data handling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Themes**: Light/dark/system modes with a color picker for infinite customization.
+- **Charts**: 7+ dynamic chart types for project and team progress visualization.
+- **Calendar**: Drag-and-drop calendar for event and task scheduling.
+- **Kanban Board**: Trello-like board for task and batch management.
+- **Data Management**: Automated handling for batches and project assignments.
+- **Profiles**: Admin and team member profiles with progress charts.
+- **Responsive**: Optimized for all devices.
+- **Pagination**: Multi-layer pagination with sorting and filtering.
 
-## Expanding the ESLint configuration
+## Screenshots
+| Dashboard | Calendar |
+|-----------|----------|
+| ![Dashboard](https://via.placeholder.com/400x300.png?text=Dashboard) | ![Calendar](https://via.placeholder.com/400x300.png?text=Calendar) |
+| Kanban | Charts |
+| ![Kanban](https://via.placeholder.com/400x300.png?text=Kanban) | ![Charts](https://via.placeholder.com/400x300.png?text=Charts) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Replace placeholder URLs with actual screenshot URLs.*
+
+## Demo
+[![Demo](https://img.shields.io/badge/Demo-Live-blue?style=for-the-badge)](https://your-demo-link.com) <!-- Replace with actual demo link -->
+
+## Installation
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Targter/CELEBAL-INTERN-4.git
+   ```
+2. Navigate to the directory:
+   ```bash
+   cd react-admin-dashboard
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the app:
+   ```bash
+   npm start
+   ```
+
+## Usage
+- Log in to access the dashboard.
+- Customize themes via the color picker.
+- Manage batches, projects, and tasks using tables, Kanban, or calendar.
+- View team progress through charts and profiles.
+
+## Technologies
+- React, React Context API
+- Tailwind CSS, Syncfusion Components
+- React Router, react-hot-toast
+- Vite
+
+## Contributing
+1. Fork the repo.
+2. Create a branch (`git checkout -b feature/your-feature`).
+3. Commit changes (`git commit -m 'Add feature'`).
+4. Push (`git push origin feature/your-feature`).
+5. Open a pull request.
+
+## Connect
+- **GitHub**: [your-github-username](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
+- **Email**: your-email@example.com <!-- Replace with your email -->
+- **LinkedIn**: [Your Profile](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
+
+## License
+MIT License. See [LICENSE](LICENSE).
+
+---
+
+*Built by [your-github-username](https://github.com/targter)*
