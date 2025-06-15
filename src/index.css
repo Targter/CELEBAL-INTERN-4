@@ -1,10 +1,10 @@
-@import "tailwindcss";
-
+/* @import "tailwindcss";
 :root {
   --theme-color: #3b82f6;
   --background-color: #ffffff;
   --text-color: #1f2937;
 }
+
 .task-card,
 .task-card * {
   user-select: none;
@@ -31,4 +31,184 @@
 .dark {
   --background-color: #1f2937;
   --text-color: #f3f4f6;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+}
+
+.theme-transition {
+  position: relative;
+  z-index: 0;
+}
+
+.theme-transition::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  background: var(--background-color);
+  z-index: -1;
+  transition: none;
+}
+
+.theme-transition.animate-background::before {
+  animation: slideDown 1s ease-in forwards;
+}
+
+@keyframes slideDown {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition.animate-background::before {
+    animation: none;
+    top: 0;
+  }
+} */
+
+/* 
+
+*/
+@import "tailwindcss";
+:root {
+  --theme-color: #3b82f6;
+  --background-color: #ffffff;
+  --text-color: #1f2937;
+}
+
+.task-card,
+.task-card * {
+  user-select: none;
+}
+
+.theme-blue {
+  --theme-color: #3b82f6;
+}
+.theme-green {
+  --theme-color: #10b981;
+}
+.theme-red {
+  --theme-color: #ef4444;
+}
+.theme-purple {
+  --theme-color: #8b5cf6;
+}
+
+.light {
+  --background-color: #ffffff;
+  --text-color: #1f2937;
+}
+
+.dark {
+  --background-color: #1f2937;
+  --text-color: #f3f4f6;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Wave animation styles */
+.theme-transition {
+  position: relative;
+  z-index: 0;
+}
+
+.theme-transition::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--background-color);
+  clip-path: path("M0,0 C50,50 150,50 200,0 V-100 H0 Z");
+  z-index: -1;
+}
+
+.theme-transition.animate-wave-down::before {
+  animation: waveDown 6s ease-out forwards;
+}
+
+@keyframes waveDown {
+  from {
+    clip-path: path("M0,0 C50,50 150,50 200,0 V-100 H0 Z");
+  }
+  to {
+    clip-path: path("M0,100 C50,150 150,150 200,100 V100 H0 Z");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition.animate-wave-down::before {
+    animation: none;
+    clip-path: none;
+  }
+}
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
+
+:root {
+  --column-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --modal-bg: #ffffff;
+  --header-bg: #f8fafc;
+  --column-bg: #f1f5f9;
+  --theme-color: #3b82f6;
+}
+
+[data-theme="dark"] {
+  --modal-bg: #1e293b;
+  --header-bg: #1e293b;
+  --column-bg: #334155;
+  --theme-color: #60a5fa;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.task-card {
+  user-select: none;
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(148% + 1.3px);
+  height: 103px;
+  transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+  fill: #0000ff;
+}
+
+[data-theme="dark"] .wave .shape-fill {
+  fill: #000066;
 }

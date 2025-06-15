@@ -61,6 +61,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     { to: "/projects", label: "Projects", icon: <FaProjectDiagram /> },
     { to: "/batches", label: "Batches", icon: <FaUsers /> },
     { to: "/kanban", label: "Kanban Board", icon: <PiKanbanFill /> },
+    { to: "/kanban2", label: "Kanban Board", icon: <PiKanbanFill /> },
     { to: "/calenders", label: "Calendar", icon: <FaCalendarAlt /> },
     { to: "/profiles", label: "Team", icon: <RiGroup2Fill /> },
   ];

@@ -176,7 +176,7 @@ export const AppProvider = ({ children }) => {
       members: [2],
     },
     {
-      id: 8,
+      id: 22,
       name: "Digital Marketing",
       projectId: 5,
       members: [8, 3],
@@ -193,6 +193,10 @@ export const AppProvider = ({ children }) => {
       batchId: 1,
       projectId: 1,
       assignedTo: [1, 2],
+      taskImage: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687071064/kanban-clone/Ellipse_14_yvjn5y.png",
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687071065/kanban-clone/Ellipse_15_vskmol.png",
+      ],
     },
     {
       id: 2,
@@ -203,6 +207,12 @@ export const AppProvider = ({ children }) => {
       batchId: 2,
       projectId: 1,
       assignedTo: [2, 3],
+      images: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687096433/kanban-clone/avatar3.png",
+      ],
+      taskImage: [
+        "https: //res.cloudinary.com/dfegprdja/image/upload/v1687070958/kanban-clone/Ellipse_12_ioshbq.png",
+      ],
     },
     {
       id: 3,
@@ -213,6 +223,12 @@ export const AppProvider = ({ children }) => {
       batchId: 1,
       projectId: 2,
       assignedTo: [1, 3],
+      images: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687096433/kanban-clone/avatar3.png",
+      ],
+      taskImage: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      ],
     },
     {
       id: 4,
@@ -220,9 +236,15 @@ export const AppProvider = ({ children }) => {
       status: "To Do",
       dueDate: "2025-04-05",
       priority: "Medium",
-      batchId: 2,
+      batchId: 22,
       projectId: 1,
       assignedTo: [3],
+      images: [
+        "https: //res.cloudinary.com/dfegprdja/image/upload/v1687070958/kanban-clone/Ellipse_12_ioshbq.png",
+      ],
+      taskImage: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      ],
     },
     {
       id: 5,
@@ -233,6 +255,9 @@ export const AppProvider = ({ children }) => {
       batchId: 1,
       projectId: 1,
       assignedTo: [2],
+      images: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687096442/kanban-clone/folder-2_hpqniu.png",
+      ],
     },
     {
       id: 6,
@@ -243,6 +268,12 @@ export const AppProvider = ({ children }) => {
       batchId: 1,
       projectId: 1,
       assignedTo: [2, 3],
+      images: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      ],
+      taskImage: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      ],
     },
     {
       id: 7,
@@ -253,6 +284,12 @@ export const AppProvider = ({ children }) => {
       batchId: 1,
       projectId: 2,
       assignedTo: [1],
+      images: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687096442/kanban-clone/folder-2_hpqniu.png",
+      ],
+      taskImage: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687071065/kanban-clone/Ellipse_15_vskmol.png",
+      ],
     },
     {
       id: 8,
@@ -271,6 +308,11 @@ export const AppProvider = ({ children }) => {
       dueDate: "2025-03-05",
       priority: "Medium",
       batchId: 3,
+      taskImage: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
+      ],
       projectId: 2,
       assignedTo: [1, 3],
       description: "Implement Firebase notifications",
@@ -285,6 +327,11 @@ export const AppProvider = ({ children }) => {
       priority: "High",
       batchId: 4,
       projectId: 2,
+      taskImage: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
+      ],
       assignedTo: [4],
       description: "Create Figma prototypes",
     },
@@ -378,6 +425,9 @@ export const AppProvider = ({ children }) => {
       batchId: 6,
       projectId: 1,
       assignedTo: [1, 3],
+      images: [
+        "https://res.cloudinary.com/dfegprdja/image/upload/v1687096442/kanban-clone/folder-2_hpqniu.png",
+      ],
       description: "Compare with similar products",
     },
 

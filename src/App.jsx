@@ -13,17 +13,6 @@ import { AppProvider } from "./context/AppContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 // import { useTheme } from "./context/Themecontext";
 import Profiles from "./pages/Profiles";
-// import CustomCalender from "./components/CustomCalender";
-// import "@syncfusion/ej2-base/styles/material.css";
-// import "@syncfusion/ej2-buttons/styles/material.css";
-// import "@syncfusion/ej2-calendars/styles/material.css";
-// import "@syncfusion/ej2-dropdowns/styles/material.css";
-// import "@syncfusion/ej2-inputs/styles/material.css";
-// import "@syncfusion/ej2-navigations/styles/material.css";
-// import "@syncfusion/ej2-popups/styles/material.css";
-// import "@syncfusion/ej2-schedule/styles/material.css";
-
-//
 
 // import BarChart from "./components/charts/BarChart";
 import BarChart from "./components/charts/BarChart";
@@ -37,6 +26,7 @@ import AreaChart from "./components/charts/AreaChart"; // Ensure this file exist
 import Charts from "./components/charts/CC";
 import KanbanBoard from "./components/KanbanBoard";
 import AdminProfile from "./pages/AdminProfile";
+import KanbanBoardd from "./pages/KanbanBoard";
 import CustomCalender from "./components/CustomCalender";
 // import Editorr from "./pages/Editor";
 const App = () => {
@@ -74,6 +64,8 @@ const App = () => {
               <Route path="/charts/area" element={<AreaChart />} />
               <Route path="/kanban" element={<KanbanBoard />} />
               <Route path="/Admin" element={<AdminProfile />} />
+              <Route path="/kanban2" element={<KanbanBoardd />} />
+
               {/* import Editors */}
             </Routes>
           </main>
