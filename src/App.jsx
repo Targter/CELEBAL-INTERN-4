@@ -12,7 +12,7 @@ import { AppProvider } from "./context/AppContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 // import { useTheme } from "./context/Themecontext";
 import Profiles from "./pages/Profiles";
-
+import "./App.css";
 // import BarChart from "./components/charts/BarChart";
 import BarChart from "./components/charts/BarChart";
 import StackChart from "./components/charts/StackChart";
@@ -41,7 +41,7 @@ const App = () => {
           style={{ backgroundColor, color: customColor }}
         >
           <Sidebar />
-          <main className="flex-1 overflow-y-auto pl-11 pr-11">
+          <main className="flex-1 overflow-y-auto">
             <div className="flex justify-end mb-4">
               <ThemeSwitcher />
             </div>

@@ -4,8 +4,9 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import { useTheme } from "../context/TC";
 
-const TaskCard = ({ item, index }) => {
+const TaskCard = ({ item, index, onEdit }) => {
   const { customColor, fontColor, backgroundColor } = useTheme();
+
   return (
     <Draggable key={item.id} draggableId={String(item.id)} index={index}>
       {(provided) => (
@@ -13,87 +14,85 @@ const TaskCard = ({ item, index }) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
+          className="mb-3 sm:mb-4"
         >
           <div
-            className={`flex flex-col rounded-md p-5 my-4 max-w-xs border border-amber-500 `}
+            className="flex flex-col rounded-md p-3 sm:p-4 border"
             style={{
               border: `1px solid ${customColor}`,
               backgroundColor: `${customColor}22`,
               color: fontColor,
             }}
           >
-            <div className="flex justify-between my-2 w-full">
+            <div className="flex justify-between mb-2 w-full">
               <div>
                 {item?.priority === "Low" && (
-                  <div className="px-2 py-1 rounded-md bg-[#DFA87433] text-[#D58D49]">
+                  <div className="px-2 py-1 rounded-md text-xs sm:text-sm bg-[#DFA87433] text-[#D58D49]">
                     {item?.priority}
                   </div>
                 )}
                 {item?.priority === "High" && (
-                  <div className="px-2 py-1 rounded-md bg-[#D8727D1A] text-[#D8727D]">
+                  <div className="px-2 py-1 rounded-md text-xs sm:text-sm bg-[#D8727D1A] text-[#D8727D]">
                     {item?.priority}
                   </div>
                 )}
                 {item?.priority === "Medium" && (
-                  <div className="px-2 py-1 rounded-md bg-[#2eb56633] text-[#14a90e]">
+                  <div className="px-2 py-1 rounded-md text-xs sm:text-sm bg-[#2eb56633] text-[#14a90e]">
                     {item?.priority}
                   </div>
                 )}
               </div>
-              <div>
-                <h6>...</h6>
-              </div>
+              <button
+                onClick={onEdit}
+                className="text-sm sm:text-base"
+                aria-label="Edit task"
+              >
+                ...
+              </button>
             </div>
-            <div className="flex flex-col">
+
+            <div className="flex flex-col gap-2">
               <div>
-                <h3
-                  className="font-semibold text-lg"
-                  style={{ color: `${fontColor}4` }}
-                >
+                <h3 className="font-semibold text-sm sm:text-base md:text-lg">
                   {item?.name}
                 </h3>
               </div>
+
               {item?.taskImage?.length > 0 ? (
-                <div className="flex gap-2">
-                  {item?.taskImage?.map((img, ind) => {
-                    return (
-                      <div key={ind + "img"}>
-                        <img alt="task" src={img} className="rounded-md" />
-                      </div>
-                    );
-                  })}
+                <div className="flex gap-1 sm:gap-2 overflow-x-auto py-1">
+                  {item?.taskImage?.map((img, ind) => (
+                    <img
+                      key={ind}
+                      alt="task"
+                      src={img}
+                      className="rounded-md h-16 sm:h-20 object-cover"
+                    />
+                  ))}
                 </div>
               ) : (
-                <div>
-                  <p className="text-[#787486] text-sm">
-                    No description available
-                  </p>
-                </div>
+                <p className="text-[#787486] text-xs sm:text-sm">
+                  No description available
+                </p>
               )}
             </div>
-            <div className="flex justify-between my-2 gap-3 items-center">
-              <div>
-                <AvatarGroup max={4}>
-                  {item?.images?.map((img, index) => {
-                    return (
-                      <Avatar
-                        key={index}
-                        sx={{ width: 24, height: 24 }}
-                        alt="Avatar"
-                        src={img}
-                      />
-                    );
-                  })}
-                </AvatarGroup>
-              </div>
-              <div className="flex justify-between gap-2">
-                <div className="flex justify-between gap-2 items-center">
-                  <div>
-                    <span className="text-sm text-[#787486] whitespace-nowrap">
-                      Due: {new Date(item?.dueDate).toLocaleDateString()}
-                    </span>
-                  </div>
-                </div>
+
+            <div className="flex justify-between mt-2 sm:mt-3 gap-2 items-center">
+              <AvatarGroup max={4} className="scale-75 sm:scale-100">
+                {item?.images?.map((img, index) => (
+                  <Avatar
+                    key={index}
+                    sx={{ width: 20, height: 20 }}
+                    alt="Avatar"
+                    src={img}
+                  />
+                ))}
+              </AvatarGroup>
+
+              <div className="text-xs sm:text-sm text-[#787486] whitespace-nowrap">
+                Due:{" "}
+                {item?.dueDate
+                  ? new Date(item.dueDate).toLocaleDateString()
+                  : "No date"}
               </div>
             </div>
           </div>
@@ -104,7 +103,6 @@ const TaskCard = ({ item, index }) => {
 };
 
 export default TaskCard;
-
 // //
 // import React from "react";
 // import { Draggable } from "@hello-pangea/dnd";

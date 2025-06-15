@@ -1,42 +1,76 @@
-/* #root {
-  max-width: 1280px;
+.dashboard-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive grid adjustments */
+@media (max-width: 640px) {
+  .dashboard-container .grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .dashboard-container .flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-container button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-container h1 {
+    font-size: 1.25rem;
+  }
+
+  .dashboard-container h2 {
+    font-size: 1rem;
+  }
+
+  .dashboard-container p {
+    font-size: 0.875rem;
+  }
+
+  .dashboard-container svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 641px) and (max-width: 1024px) {
+  .dashboard-container .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-container h2 {
+    font-size: 1.125rem;
+  }
+
+  .dashboard-container p {
+    font-size: 1rem;
   }
 }
 
-.card {
-  padding: 2em;
+/* Ensure tables are scrollable on small screens */
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.read-the-docs {
-  color: #888;
-} */
+/* Ensure charts are responsive */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Modal responsiveness */
+.modal {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
