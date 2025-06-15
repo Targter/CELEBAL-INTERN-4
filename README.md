@@ -33,7 +33,7 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
    ```
 2. Navigate to the directory:
    ```bash
-   cd react-admin-dashboard
+   cd CELEBAL-INTERN-4
    ```
 3. Install dependencies:
    ```bash
