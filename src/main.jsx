@@ -7,7 +7,7 @@ import { ThemeProviderr } from "./theme/TtProvider.jsx";
 // import { ThemeProvider } from "./context/Themecontext.jsx";
 // import { ThemeProvider } from "./context/Themecontext.jsx";
 import { ThemeProvider } from "./context/Themecontext";
-
+// src\context\Themecontext.jsx
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProviderr>
