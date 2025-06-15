@@ -2,7 +2,7 @@ import React, { useMemo, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Line } from "react-chartjs-2";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/Themecontext";
+import { useTheme } from "../../context/ThemeContext";
 import { format, subMonths, startOfMonth } from "date-fns";
 import {
   Chart as ChartJS,

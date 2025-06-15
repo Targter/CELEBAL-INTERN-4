@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import { toast } from "react-toastify";
 import { FaSave, FaUndo, FaTimes, FaInfoCircle } from "react-icons/fa";
 

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { CSVLink } from "react-csv";
 import { FaPlus, FaSearch } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import { format, isBefore, isAfter } from "date-fns";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 

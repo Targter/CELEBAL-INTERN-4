@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bar } from "react-chartjs-2";
 import { CSVLink } from "react-csv";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/Themecontext";
+import { useTheme } from "../../context/ThemeContext";
 import ChartsHeader from "./ChartsHeaders";
 import { format } from "date-fns";
 
@@ -71,8 +71,8 @@ const BarChart = ({ selectedBatchId = null }) => {
         "In Progress": inProgress[i],
         "To Do": todo[i],
       })),
-      {}, 
-      
+      {},
+
       {
         Member: "Metrics",
         Completed: "",

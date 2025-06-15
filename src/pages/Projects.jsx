@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import { toast } from "react-toastify";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import { CSVLink } from "react-csv";

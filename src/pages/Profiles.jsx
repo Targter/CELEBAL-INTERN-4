@@ -8,7 +8,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import Charts from "../components/Charts";
 import { FaUser, FaTimes } from "react-icons/fa";
 

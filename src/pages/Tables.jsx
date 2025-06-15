@@ -7,7 +7,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 
 const ColumnFilter = ({ column }) => {
   const { backgroundColor, fontColor, customColor } = useTheme();

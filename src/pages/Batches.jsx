@@ -20,7 +20,7 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 
 const ColumnFilter = ({ column }) => {
   const { backgroundColor, fontColor, customColor } = useTheme();

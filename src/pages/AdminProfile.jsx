@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 
 const AdminProfile = () => {
   const { backgroundColor, fontColor, customColor } = useTheme();

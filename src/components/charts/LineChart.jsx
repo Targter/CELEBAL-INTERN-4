@@ -13,7 +13,7 @@ import {
 } from "chart.js";
 import { CSVLink } from "react-csv";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/Themecontext";
+import { useTheme } from "../../context/ThemeContext";
 import { format, startOfMonth, subMonths } from "date-fns";
 import ChartsHeader from "./ChartsHeaders";
 

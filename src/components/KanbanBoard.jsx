@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { FaGripVertical, FaPlus, FaLinkedin } from "react-icons/fa";

@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import { CSVLink } from "react-csv";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/Themecontext";
+import { useTheme } from "../../context/ThemeContext";
 import { format } from "date-fns";
 import ChartsHeader from "./ChartsHeaders";
 
@@ -105,7 +105,7 @@ const PolarAreaChart = ({ chartId = `polar-area-chart-${Date.now()}` }) => {
           Member: d.memberName,
           TotalTasks: d.totalTasks,
         })),
-        {},  
+        {},
         {
           Member: "Metrics",
           TotalTasks: "",

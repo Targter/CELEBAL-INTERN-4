@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../context/ThemeContext";
 import { CSVLink } from "react-csv";
 import html2pdf from "html2pdf.js";
 
@@ -28,7 +28,7 @@ const Charts = ({ selectedMemberId = null, chartId = "chart" }) => {
   const { backgroundColor, fontColor, customColor } = useTheme();
   const chartRef = useRef(null);
 
-   //lighter/darker shades from customColor
+  //lighter/darker shades from customColor
   const getShade = (hex, amount) => {
     const num = parseInt(hex.replace("#", ""), 16);
     let r = (num >> 16) + amount;
