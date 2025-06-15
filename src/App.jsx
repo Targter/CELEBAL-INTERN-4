@@ -28,6 +28,7 @@ import KanbanBoard from "./components/KanbanBoard";
 import AdminProfile from "./pages/AdminProfile";
 import KanbanBoardd from "./pages/KanbanBoard";
 import CustomCalender from "./components/CustomCalender";
+import HomePagee from "./pages/HP";
 // import Editorr from "./pages/Editor";
 const App = () => {
   const { backgroundColor, fontColor, customColor } = useTheme();
@@ -66,6 +67,7 @@ const App = () => {
               <Route path="/Admin" element={<AdminProfile />} />
               <Route path="/kanban2" element={<KanbanBoardd />} />
 
+              <Route path="/hp" element={<HomePagee />} />
               {/* import Editors */}
             </Routes>
           </main>

@@ -58,6 +58,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
   const navItems = [
     { to: "/", label: "Dashboard", icon: <FaTachometerAlt /> },
+    { to: "/hp", label: "Dashboad-2", icon: <FaTachometerAlt /> },
     { to: "/projects", label: "Projects", icon: <FaProjectDiagram /> },
     { to: "/batches", label: "Batches", icon: <FaUsers /> },
     { to: "/kanban", label: "Kanban Board", icon: <PiKanbanFill /> },

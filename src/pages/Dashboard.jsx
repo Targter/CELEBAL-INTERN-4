@@ -6,7 +6,8 @@ import { toast, ToastContainer } from "react-toastify";
 import Tables from "./Tables";
 import Charts from "../components/Charts";
 // import CustomCalender from "../components/CustomCalender";
-import KanbanBoard from "../components/KanbanBoard";
+// import KanbanBoard from "../components/KanbanBoard";
+import Board from "./KanbanBoard";
 import { useAppContext } from "../context/AppContext";
 import ProjectModal from "../components/ProjectModal";
 import BatchModal from "../components/BatchModal";
@@ -383,7 +384,7 @@ const Dashboard = () => {
           >
             Task Progress Board
           </h2>
-          <KanbanBoard />
+          <Board />
         </motion.div>
 
         {showProjectModal && (

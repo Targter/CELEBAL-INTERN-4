@@ -238,6 +238,34 @@ const KanbanBoard = () => {
   }
 
   return (
+    // <div className="p-4">
+    //   <div className="mb-4 flex items-center space-x-4">
+    //     <h2 className="text-xl font-bold" style={{ color: fontColor }}>
+    //       Kanban Board: {selectedBatch.name}
+    //     </h2>
+    //     <select
+    //       value={selectedBatch.id}
+    //       onChange={(e) => {
+    //         const batch = batches.find((b) => b.id === Number(e.target.value));
+    //         console.log("Switching batch:", batch);
+    //         if (batch) selectBatch(batch);
+    //       }}
+    //       className="p-2 rounded-lg"
+    //       style={{
+    //         backgroundColor: `${backgroundColor}cc`,
+    //         color: fontColor,
+    //         borderColor: `${fontColor}33`,
+    //       }}
+    //     >
+    //       {batches.map((batch) => (
+    //         <option key={batch.id} value={batch.id}>
+    //           {batch.name}
+    //         </option>
+    //       ))}
+    //     </select>
+    //   </div>
+
+    // </div>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -253,9 +281,6 @@ const KanbanBoard = () => {
         <motion.h2
           className="text-2xl sm:text-3xl font-extrabold"
           style={{
-            // background: `linear-gradient(90deg, ${customColor}, ${fontColor})`,
-            // WebkitBackgroundClip: "text",
-            // WebkitTextFillColor: "transparent",
             backgroundColor,
             color: fontColor,
           }}
