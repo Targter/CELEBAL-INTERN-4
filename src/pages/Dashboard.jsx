@@ -13,7 +13,7 @@ import ProjectModal from "../components/ProjectModal";
 import BatchModal from "../components/BatchModal";
 import TaskModal from "../components/TaskModal";
 import { FaTasks, FaProjectDiagram, FaUsers } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 import Disclaimer from "../components/Disclaimer";
 
 const Dashboard = () => {

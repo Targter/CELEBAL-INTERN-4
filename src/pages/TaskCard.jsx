@@ -2,7 +2,7 @@ import React from "react";
 import { Draggable } from "@hello-pangea/dnd";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 
 const TaskCard = ({ item, index }) => {
   const { customColor, fontColor, backgroundColor } = useTheme();

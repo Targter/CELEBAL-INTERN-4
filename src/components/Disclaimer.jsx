@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 
 const Disclaimer = () => {
   const { fontColor, customColor } = useTheme();

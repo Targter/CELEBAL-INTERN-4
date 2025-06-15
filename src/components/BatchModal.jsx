@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAppContext } from "../context/AppContext";
 import { toast } from "react-toastify";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 
 const BatchModal = ({ batch, onClose }) => {
   const { addBatch, updateBatch, projects, members } = useAppContext();

@@ -7,7 +7,7 @@ import Batches from "./pages/Batches";
 import Settings from "./pages/Settings";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useTheme } from "./context/ThemeContext";
+import { useTheme } from "./context/TC";
 import { AppProvider } from "./context/AppContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 // import { useTheme } from "./context/Themecontext";

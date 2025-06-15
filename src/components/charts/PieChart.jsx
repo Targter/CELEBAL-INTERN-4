@@ -4,7 +4,7 @@ import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { CSVLink } from "react-csv";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/TC";
 import { format } from "date-fns";
 import ChartsHeader from "./ChartsHeaders";
 

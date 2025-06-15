@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bar } from "react-chartjs-2";
 import { CSVLink } from "react-csv";
 import { useAppContext } from "../../context/AppContext";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/TC";
 import ChartsHeader from "./ChartsHeaders";
 import { format } from "date-fns";
 

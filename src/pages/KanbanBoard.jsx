@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 import TaskCard from "./TaskCard";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 import { FaLinkedin, FaPlus } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";

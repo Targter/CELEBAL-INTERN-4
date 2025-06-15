@@ -6,7 +6,7 @@ import { Providers } from "./theme/Providers.jsx";
 import { ThemeProviderr } from "./theme/TtProvider.jsx";
 // import { ThemeProvider } from "./context/Themecontext.jsx";
 // import { ThemeProvider } from "./context/Themecontext.jsx";
-import { ThemeProvider } from "./context/ThemeContext.jsx";
+import { ThemeProvider } from "./context/TC.jsx";
 // src\context\Themecontext.jsx
 createRoot(document.getElementById("root")).render(
   <StrictMode>

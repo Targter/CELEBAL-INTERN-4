@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { useAppContext } from "../context/AppContext";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/TC";
 import { CSVLink } from "react-csv";
 import html2pdf from "html2pdf.js";
 
