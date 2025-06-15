@@ -41,7 +41,7 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
    ```
 4. Start the app:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Usage
