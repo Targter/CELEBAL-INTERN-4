@@ -92,7 +92,7 @@ export function ModeToggle() {
     <Button
       variant="secondary"
       size="icon"
-      className="group/toggle size-8"
+      className="group/toggle size-8 ml-11"
       onClick={handleThemeToggle}
       aria-label="Toggle theme"
     >
