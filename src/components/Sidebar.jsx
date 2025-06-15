@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import { useTheme } from "../context/ThemeContext";
 import { useTheme } from "../context/TC";
 import {
   FaTachometerAlt,
   FaProjectDiagram,
   FaUsers,
   FaCog,
-  FaUserCircle,
   FaCalendarAlt,
   FaChartBar,
   FaChartPie,
   FaChartLine,
-  FaUserShield,
-  FaTasks,
+  FaChartArea,
 } from "react-icons/fa";
 import { RiGroup2Fill } from "react-icons/ri";
-import { PiKanbanFill } from "react-icons/pi";
-import { PiChartPolarFill } from "react-icons/pi";
+import { PiKanbanFill, PiChartPolarFill } from "react-icons/pi";
 import { BiSolidDoughnutChart } from "react-icons/bi";
 import { MdOutlineStackedBarChart } from "react-icons/md";
-import { FaChartArea } from "react-icons/fa6";
 import { TbChartRadar } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+  const [isKanbanOpen, setIsKanbanOpen] = useState(false);
   const { backgroundColor, fontColor, customColor } = useTheme();
 
   // Handle window resize to adjust sidebar state
@@ -34,9 +32,12 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       const width = window.innerWidth;
       if (width < 640) {
         setIsOpen(false);
-        // setIsMobileMenuOpen(false);
+        setIsDashboardOpen(false);
+        setIsKanbanOpen(false);
       } else if (width >= 640 && width < 1024) {
         setIsOpen(false);
+        setIsDashboardOpen(false);
+        setIsKanbanOpen(false);
       } else {
         setIsOpen(true);
       }
@@ -48,9 +49,9 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `flex items-center p-3 rounded-lg transition-colors group relative ${
-      isActive ? "text-white" : ""
-    } hover:bg-opacity-80`;
+    `flex items-center p-3 rounded-lg transition-all duration-300 group relative ${
+      isActive ? "text-white shadow-lg scale-105" : "hover:bg-opacity-20"
+    } hover:bg-${customColor} hover:shadow-md hover:scale-105`;
 
   const activeStyle = ({ isActive }) =>
     isActive
@@ -58,12 +59,8 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       : { color: fontColor };
 
   const navItems = [
-    { to: "/", label: "Dashboard", icon: <FaTachometerAlt /> },
-    { to: "/hp", label: "Dashboad-2", icon: <FaTachometerAlt /> },
     { to: "/projects", label: "Projects", icon: <FaProjectDiagram /> },
     { to: "/batches", label: "Batches", icon: <FaUsers /> },
-    { to: "/kanban", label: "Kanban Board", icon: <PiKanbanFill /> },
-    { to: "/kanban2", label: "Kanban Board", icon: <PiKanbanFill /> },
     { to: "/calenders", label: "Calendar", icon: <FaCalendarAlt /> },
     { to: "/profiles", label: "Team", icon: <RiGroup2Fill /> },
   ];
@@ -91,12 +88,51 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     },
   ];
 
-  const Admin = [{ to: "/settings", label: "Settings", icon: <FaCog /> }];
+  const adminItems = [{ to: "/settings", label: "Settings", icon: <FaCog /> }];
+
+  const dashboardItems = [
+    { to: "/", label: "Dashboard", icon: <FaTachometerAlt /> },
+    { to: "/hp", label: "Dashboard-2", icon: <FaTachometerAlt /> },
+  ];
+
+  const kanbanItems = [
+    { to: "/kanban", label: "Kanban Board", icon: <PiKanbanFill /> },
+    { to: "/kanban2", label: "Kanban Board 2", icon: <PiKanbanFill /> },
+  ];
+
+  const dropdownVariants = {
+    hidden: { opacity: 0, height: 0, transition: { duration: 0.4 } },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30, scale: 0.9 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 100,
+      },
+    }),
+  };
 
   return (
     <div
-      className={` h-full shadow-xl transition-all duration-300 z-50 bg-green-500 ${
-        isOpen ? "w-64" : "w-16 sm:w-16"
+      className={`h-full shadow-2xl transition-all duration-500 z-50 ${
+        isOpen ? "w-72" : "w-16 sm:w-16"
       } ${isOpen ? "block" : "block sm:block"}`}
       style={{ backgroundColor }}
       aria-label="Sidebar Navigation"
@@ -104,47 +140,178 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       <button
         onClick={() => {
           setIsOpen(!isOpen);
-          // if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+          if (isMobileMenuOpen) setIsMobileMenuOpen(false);
         }}
-        className="p-4 w-full flex items-center justify-between"
+        className="p-4 w-full flex items-center justify-between hover:bg-opacity-20 hover:bg-gray-200 transition-colors duration-300 rounded-lg"
         aria-label={isOpen ? "Collapse Sidebar" : "Expand Sidebar"}
         style={{ color: fontColor }}
       >
         <IoIosArrowForward
-          className={`w-6 h-6 transition-transform ${
-            isOpen ? "rotate-180" : ""
+          className={`w-6 h-6 transition-transform duration-400 ease-in-out ${
+            isOpen ? "rotate-180 scale-110" : "scale-100"
           }`}
         />
       </button>
 
-      <nav className="space-y-1 px-2 mb-11">
+      <nav className="space-y-2 px-3 mb-12">
+        {/* Dashboards Section */}
+        <motion.div
+          className="px-3 py-2 text-xs uppercase tracking-wide font-semibold cursor-pointer rounded-md hover:bg-opacity-10 hover:bg-gray-200 transition-colors duration-200"
+          style={{ color: `${fontColor}80` }}
+          onClick={() => setIsDashboardOpen(!isDashboardOpen)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isOpen && (
+            <div className="flex items-center justify-between">
+              <span>Dashboards</span>
+              <IoIosArrowForward
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  isDashboardOpen ? "rotate-90" : ""
+                }`}
+              />
+            </div>
+          )}
+        </motion.div>
+        <AnimatePresence>
+          {isDashboardOpen && isOpen && (
+            <motion.div
+              variants={dropdownVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="ml-4"
+            >
+              {dashboardItems.map((item, index) => (
+                <motion.div
+                  key={item.to}
+                  variants={itemVariants}
+                  custom={index}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                >
+                  <NavLink
+                    to={item.to}
+                    className={navLinkClass}
+                    style={activeStyle}
+                    aria-label={item.label}
+                    onClick={() =>
+                      isMobileMenuOpen && setIsMobileMenuOpen(false)
+                    }
+                  >
+                    <span className="text-lg mr-3">{item.icon}</span>
+                    {isOpen && <span>{item.label}</span>}
+                    {!isOpen && (
+                      <span
+                        className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 shadow-lg"
+                        style={{ backgroundColor: customColor }}
+                      >
+                        {item.label}
+                      </span>
+                    )}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Kanban Boards Section */}
+        <motion.div
+          className="px-3 py-2 text-xs uppercase tracking-wide font-semibold cursor-pointer rounded-md hover:bg-opacity-10 hover:bg-gray-200 transition-colors duration-200"
+          style={{ color: `${fontColor}80` }}
+          onClick={() => setIsKanbanOpen(!isKanbanOpen)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isOpen && (
+            <div className="flex items-center justify-between">
+              <span>Kanban Boards</span>
+              <IoIosArrowForward
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  isKanbanOpen ? "rotate-90" : ""
+                }`}
+              />
+            </div>
+          )}
+        </motion.div>
+        <AnimatePresence>
+          {isKanbanOpen && isOpen && (
+            <motion.div
+              variants={dropdownVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="ml-4"
+            >
+              {kanbanItems.map((item, index) => (
+                <motion.div
+                  key={item.to}
+                  variants={itemVariants}
+                  custom={index}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                >
+                  <NavLink
+                    to={item.to}
+                    className={navLinkClass}
+                    style={activeStyle}
+                    aria-label={item.label}
+                    onClick={() =>
+                      isMobileMenuOpen && setIsMobileMenuOpen(false)
+                    }
+                  >
+                    <span className="text-lg mr-3">{item.icon}</span>
+                    {isOpen && <span>{item.label}</span>}
+                    {!isOpen && (
+                      <span
+                        className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 shadow-lg"
+                        style={{ backgroundColor: customColor }}
+                      >
+                        {item.label}
+                      </span>
+                    )}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Main Section */}
         <div
-          className="px-3 py-1 text-xs uppercase tracking-wide font-semibold"
+          className="px-3 py-2 mt-4 text-xs uppercase tracking-wide font-semibold"
           style={{ color: `${fontColor}80` }}
         >
           {isOpen ? "Main" : ""}
         </div>
         {navItems.map((item) => (
-          <NavLink
+          <motion.div
             key={item.to}
-            to={item.to}
-            className={navLinkClass}
-            style={activeStyle}
-            aria-label={item.label}
-            // onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg mr-3">{item.icon}</span>
-            {isOpen && <span>{item.label}</span>}
-            {!isOpen && (
-              <span
-                className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity z-50"
-                style={{ backgroundColor: customColor }}
-              >
-                {item.label}
-              </span>
-            )}
-          </NavLink>
+            <NavLink
+              to={item.to}
+              className={navLinkClass}
+              style={activeStyle}
+              aria-label={item.label}
+              onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            >
+              <span className="text-lg mr-3">{item.icon}</span>
+              {isOpen && <span>{item.label}</span>}
+              {!isOpen && (
+                <span
+                  className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 shadow-lg"
+                  style={{ backgroundColor: customColor }}
+                >
+                  {item.label}
+                </span>
+              )}
+            </NavLink>
+          </motion.div>
         ))}
 
         {/* Charts Section */}
@@ -155,54 +322,64 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           {isOpen ? "Charts" : ""}
         </div>
         {chartItems.map((item) => (
-          <NavLink
+          <motion.div
             key={item.to}
-            to={item.to}
-            className={navLinkClass}
-            style={activeStyle}
-            aria-label={item.label}
-            // onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg mr-3">{item.icon}</span>
-            {isOpen && <span>{item.label}</span>}
-            {!isOpen && (
-              <span
-                className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity z-50"
-                style={{ backgroundColor: customColor }}
-              >
-                {item.label}
-              </span>
-            )}
-          </NavLink>
+            <NavLink
+              to={item.to}
+              className={navLinkClass}
+              style={activeStyle}
+              aria-label={item.label}
+              onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            >
+              <span className="text-lg mr-3">{item.icon}</span>
+              {isOpen && <span>{item.label}</span>}
+              {!isOpen && (
+                <span
+                  className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 shadow-lg"
+                  style={{ backgroundColor: customColor }}
+                >
+                  {item.label}
+                </span>
+              )}
+            </NavLink>
+          </motion.div>
         ))}
 
-        {/* Admin SEction */}
+        {/* Admin Section */}
         <div
           className="px-3 py-2 mt-4 text-xs uppercase tracking-wide font-semibold"
           style={{ color: `${fontColor}80` }}
         >
-          {isOpen && "Admin"}
+          {isOpen ? "Admin" : ""}
         </div>
-        {Admin.map((item) => (
-          <NavLink
+        {adminItems.map((item) => (
+          <motion.div
             key={item.to}
-            to={item.to}
-            className={navLinkClass}
-            style={activeStyle}
-            aria-label={item.label}
-            // onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg mr-3">{item.icon}</span>
-            {isOpen && <span>{item.label}</span>}
-            {!isOpen && (
-              <span
-                className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity z-50"
-                style={{ backgroundColor: customColor }}
-              >
-                {item.label}
-              </span>
-            )}
-          </NavLink>
+            <NavLink
+              to={item.to}
+              className={navLinkClass}
+              style={activeStyle}
+              aria-label={item.label}
+              onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+            >
+              <span className="text-lg mr-3">{item.icon}</span>
+              {isOpen && <span>{item.label}</span>}
+              {!isOpen && (
+                <span
+                  className="absolute left-16 bg-gray-800 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 shadow-lg"
+                  style={{ backgroundColor: customColor }}
+                >
+                  {item.label}
+                </span>
+              )}
+            </NavLink>
+          </motion.div>
         ))}
       </nav>
     </div>

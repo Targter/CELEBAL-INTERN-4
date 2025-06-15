@@ -27,7 +27,8 @@ const HomePagee = () => {
             <h2 className="text-2xl font-bold tracking-tight">
               Hi, Welcome back 👋
             </h2>
-            <h3 className="text-3xl ">Some Customization left..........</h3>
+            <h3 className="text-3xl ">Try this one....</h3>
+            {/* <h4></h4> */}
           </div>
 
           <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4">
