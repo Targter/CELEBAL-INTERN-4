@@ -29,7 +29,7 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
 ## Installation
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-github-username/react-admin-dashboard.git
+   git clone https://github.com/Targter/CELEBAL-INTERN-4.git
    ```
 2. Navigate to the directory:
    ```bash
@@ -64,9 +64,9 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
 5. Open a pull request.
 
 ## Connect
-- **GitHub**: [your-github-username](https://github.com/your-github-username) <!-- Replace with your GitHub profile -->
+- **GitHub**: [your-github-username](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
 - **Email**: your-email@example.com <!-- Replace with your email -->
-- **LinkedIn**: [Your Profile](https://linkedin.com/in/your-linkedin) <!-- Replace with your LinkedIn -->
+- **LinkedIn**: [Your Profile](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
 
 ## License
 MIT License. See [LICENSE](LICENSE).
