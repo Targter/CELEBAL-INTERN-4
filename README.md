@@ -64,9 +64,9 @@ A modern, responsive React Admin Dashboard for efficient project and team manage
 5. Open a pull request.
 
 ## Connect
-- **GitHub**: [your-github-username](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
+- **GitHub**: [https://github.com/Targter/](https://github.com/Targter/) <!-- Replace with your GitHub profile -->
 - **Email**: bansalabhay00@gmail.com <!-- Replace with your email -->
-- **LinkedIn**: [Your Profile](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
+- **LinkedIn**: [https://linkedin.com/in/bansalabhay](https://linkedin.com/in/bansalabhay) <!-- Replace with your LinkedIn -->
 
 ## License
 MIT License. See [LICENSE](LICENSE).
