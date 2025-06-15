@@ -4,7 +4,10 @@ import "./index.css";
 import App from "./App.jsx";
 import { Providers } from "./theme/Providers.jsx";
 import { ThemeProviderr } from "./theme/TtProvider.jsx";
-import { ThemeProvider } from "./context/Themecontext.jsx";
+// import { ThemeProvider } from "./context/Themecontext.jsx";
+// import { ThemeProvider } from "./context/Themecontext.jsx";
+import { ThemeProvider } from "./context/Themecontext";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProviderr>
